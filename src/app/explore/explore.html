@@ -1,0 +1,33 @@
+<md-tabs md-dynamic-height md-border-bottom md-autoselect>
+    <md-tab  flex ng-repeat="cat in ctrl.vises" label="{{cat.category}}">
+        <md-content layout-padding layout="column"  ng-repeat="vis in cat.vises">
+            <md-card>
+                <md-card-header-text>
+                 <span class="md-title">{{vis.title}}</span>
+                   
+                </md-card-header-text>
+                <md-content layout="row">
+                <Tableau-Chart flex="60" url="vis.url"></Tableau-Chart>
+                <md-divider  md-inset></md-divider>
+                <md-content layout->
+                    <md-list>
+                        <md-subheader >Properties</md-subheader>
+                        
+                        <md-list-item class="md-3-line" ng-repeat="item in ['Filters','Description']">
+                            <div class="md-list-item-text" >
+                              <h4>{{ item }}</h4>
+                            <md-divider ></md-divider>
+                            </div>
+                          </md-list-item>
+                          
+                    </md-list>
+                    </md-content>
+                </md-content>
+                
+                
+
+                
+            </md-card>
+        </md-content>
+    </md-tab>
+</md-tabs>
