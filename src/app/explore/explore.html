@@ -1,33 +1,44 @@
-<md-tabs md-dynamic-height md-border-bottom md-autoselect>
-    <md-tab  flex ng-repeat="cat in ctrl.vises" label="{{cat.category}}">
-        <md-content layout-padding layout="column"  ng-repeat="vis in cat.vises">
-            <md-card>
-                <md-card-header-text>
-                 <span class="md-title">{{vis.title}}</span>
-                   
-                </md-card-header-text>
-                <md-content layout="row">
-                <Tableau-Chart flex="60" url="vis.url"></Tableau-Chart>
-                <md-divider  md-inset></md-divider>
-                <md-content layout->
-                    <md-list>
-                        <md-subheader >Properties</md-subheader>
-                        
-                        <md-list-item class="md-3-line" ng-repeat="item in ['Filters','Description']">
-                            <div class="md-list-item-text" >
-                              <h4>{{ item }}</h4>
-                            <md-divider ></md-divider>
-                            </div>
-                          </md-list-item>
-                          
-                    </md-list>
-                    </md-content>
-                </md-content>
-                
-                
+<section>
+    <md-tabs md-dynamic-height md-border-bottom md-autoselect>
+        <md-tab flex ng-repeat="cat in ctrl.vises" label="{{cat.category}}">
 
-                
-            </md-card>
-        </md-content>
-    </md-tab>
-</md-tabs>
+            <div layout="row" layout-wrap layout-align="center top">
+                <md-card flex="40" ng-repeat="vis in cat.vises">
+                    <div class="md-actions" layout="row" layout-align="end center">
+                        <h4>{{vis.title}}</h2>
+                        <span flex></span>
+                        <md-button class="md-icon-button" aria-label="Favorite">
+                            <i class="material-icons">favorite</i>
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="More">
+                            <i class="material-icons">more_vert</i>
+                        </md-button>
+                    </div>
+                    <md-card-content>
+                        <Tableau-Chart url="vis.url"></Tableau-Chart>
+                    </md-card-content>
+
+                </md-card>
+            </div>
+
+            <!--<md-content layout-padding>
+                    <md-whiteframe ng-repeat="vis in cat.vises">
+                    <md-toolbar class="md-warn">
+                        <div class="md-toolbar-tools">
+                            <h2><span>{{vis.title}}</span></h2>
+                            <span flex></span>
+                            <md-button class="md-icon-button" aria-label="Favorite">
+                                <i class="material-icons">favorite</i>
+                            </md-button>
+                            <md-button class="md-icon-button" aria-label="More">
+                                <i class="material-icons">more_vert</i>
+                            </md-button>
+                        </div>
+                    </md-toolbar>
+                    <Tableau-Chart url="vis.url"></Tableau-Chart>
+                </md-whiteframe>
+            </md-content>-->
+
+        </md-tab>
+    </md-tabs>
+</section>

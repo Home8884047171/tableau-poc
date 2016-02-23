@@ -30,7 +30,6 @@ function TableauChart ($parse, $log) {
             );
             scope.$on('$destroy', function() {
                 viz.dispose();
-                
             });
             
         }

@@ -17,9 +17,7 @@
     toastrConfig.preventDuplicates = true;
     toastrConfig.progressBar = true;
       
-    $mdThemingProvider.theme('default')
-    .primaryPalette('pink')
-    .accentPalette('orange'); 
+    
       
   }
 
